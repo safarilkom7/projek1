@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 <div class="row">
   <div class="col-lg-3">
 
-    <p align="left"><?= $form->field($model, 'nim') ?></p>
+  <!-- <?//= $form->field($model, 'nim') ?> -->
  
     </div>
 </div>
