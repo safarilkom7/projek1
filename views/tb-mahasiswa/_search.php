@@ -14,13 +14,10 @@ use yii\widgets\ActiveForm;
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-<div class="row">
-  <div class="col-lg-3">
 
-  <!-- <?//= $form->field($model, 'nim') ?> -->
+  <?= $form->field($model, 'globalSearch') ?>
  
-    </div>
-</div>
+
 
    
 

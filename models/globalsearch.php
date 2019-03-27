@@ -58,21 +58,16 @@ class TbMahasiswaSearch extends TbMahasiswa
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->OrFilterWhere([
-            'id' => $this->id,
-            'angkatan' => $this->angkatan,
-        ]);
 
-        $query->OrFilterWhere(['like', 'nim', $this->globalSearch])
-            ->OrFilterWhere(['like', 'nama_lengkap', $this->globalSearch])
-            ->OrFilterWhere(['like', 'jenis_kelamin', $this->globalSearch])
-            ->OrFilterWhere(['like', 'ttl', $this->globalSearch])
-            ->OrFilterWhere(['like', 'agama', $this->globalSearch])
-            ->OrFilterWhere(['like', 'alamat', $this->globalSearch])
-            ->OrFilterWhere(['like', 'email', $this->globalSearch])
-            ->OrFilterWhere(['like', 'status', $this->globalSearch])
-            ->OrFilterWhere(['like', 'foto', $this->globalSearch]);
+        $query->orFilterWhere(['like', 'nim', $this->globalSearch])
+            ->orFilterWhere(['like', 'nama_lengkap', $this->globalSearch])
+            ->orFilterWhere(['like', 'jenis_kelamin', $this->globalSearch])
+            ->orFilterWhere(['like', 'ttl', $this->globalSearch])
+            ->orFilterWhere(['like', 'agama', $this->globalSearch])
+            ->orFilterWhere(['like', 'alamat', $this->globalSearch])
+            ->orFilterWhere(['like', 'email', $this->globalSearch])
+            ->orFilterWhere(['like', 'status', $this->globalSearch])
+            ->orFilterWhere(['like', 'foto', $this->globalSearch]);
 
         return $dataProvider;
     }
