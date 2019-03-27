@@ -20,7 +20,7 @@ class TbMahasiswaSearch extends TbMahasiswa
     {
         return [
             [['id', 'angkatan'], 'integer'],
-            [['nim', 'nama_lengkap', 'jenis_kelamin', 'ttl', 'agama', 'alamat', 'email', 'status', 'foto'], 'safe'],
+            [['nim','globalSearch','nama_lengkap', 'jenis_kelamin', 'ttl', 'agama', 'alamat', 'email', 'status', 'foto'], 'safe'],
         ];
     }
 
@@ -60,8 +60,8 @@ class TbMahasiswaSearch extends TbMahasiswa
 
         // grid filtering conditions
         $query->OrFilterWhere([
-            'id' => $this->id,
-            'angkatan' => $this->angkatan,
+            'id' => $this->globalSearch,
+            'angkatan' => $this->globalSearch,
         ]);
 
         $query->OrFilterWhere(['like', 'nim', $this->globalSearch])
