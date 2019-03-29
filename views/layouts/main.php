@@ -128,7 +128,7 @@ DashboardAsset::register($this);
               echo "active";
 
             }
-          ?>">
+            ?>">
             <a href="<?= Yii::$app->homeUrl; ?>">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
@@ -140,25 +140,34 @@ DashboardAsset::register($this);
               echo "active";
 
             }
-          ?>">
+            ?>">
             <a href="<?= Url::to(['tb-mahasiswa/index']) ?>">
-              <i class="fa fa-dashboard"></i> <span>Mahasiswa</span>
+              <i class="fa fa-mortar-board"></i> <span>Mahasiswa</span>
             </a>
           </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-files-o"></i>
-              <span>Layout Options</span>
-              <span class="pull-right-container">
-                <span class="label label-primary pull-right">4</span>
-              </span>
+          <li class="<?php 
+            if(Url::current() == Url::to(['site/contact']) )
+            {
+
+              echo "active";
+
+            }
+            ?>">
+            <a href="<?= Url::to(['site/contact']) ?>">
+              <i class="fa fa-comment"></i> <span>Kontak</span>
             </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-              <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-              <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-            </ul>
+          </li>
+          <li class="<?php 
+            if(Url::current() == Url::to(['site/login']) )
+            {
+
+              echo "active";
+
+            }
+            ?>">
+            <a href="<?= Url::to(['site/login']) ?>">
+              <i class="fa fa-user"></i> <span>Login</span>
+            </a>
           </li>
         </ul>
       </section>
