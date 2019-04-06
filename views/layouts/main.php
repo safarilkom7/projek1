@@ -16,17 +16,17 @@ DashboardAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title>Aplikasi Data Mahasiswa</title>
-    <?php $this->head() ?>
+  <meta charset="<?= Yii::$app->charset ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?= Html::csrfMetaTags() ?>
+  <title>Aplikasi Data Mahasiswa</title>
+  <?php $this->head() ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<?php $this->beginBody() ?>
+  <?php $this->beginBody() ?>
 
-<div class="wrapper">
+  <div class="wrapper">
 
     <header class="main-header">
       <!-- Logo -->
@@ -112,9 +112,9 @@ DashboardAsset::register($this);
           <div class="input-group">
             <input type="text" name="q" class="form-control" placeholder="Search...">
             <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                  </button>
-                </span>
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
           </div>
         </form>
         <!-- /.search form -->
@@ -122,70 +122,85 @@ DashboardAsset::register($this);
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
           <li class="<?php 
-            if(Url::current() == Url::to(['site/index']) )
-            {
+          if(Url::current() == Url::to(['site/index']) )
+          {
 
-              echo "active";
+            echo "active";
 
-            }
-            ?>">
-            <a href="<?= Yii::$app->homeUrl; ?>">
-              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            </a>
-          </li>
-          <li class="<?php 
-            if(Url::current() == Url::to(['tb-mahasiswa/index']) )
-            {
+          }
+          ?>">
+          <a href="<?= Yii::$app->homeUrl; ?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="<?php 
+        if(Url::current() == Url::to(['tb-mahasiswa/index']) )
+        {
 
-              echo "active";
+          echo "active";
 
-            }
-            ?>">
-            <a href="<?= Url::to(['tb-mahasiswa/index']) ?>">
-              <i class="fa fa-mortar-board"></i> <span>Mahasiswa</span>
-            </a>
-          </li>
-          <li class="<?php 
-            if(Url::current() == Url::to(['site/contact']) )
-            {
-
-              echo "active";
-
-            }
-            ?>">
-            <a href="<?= Url::to(['site/contact']) ?>">
-              <i class="fa fa-comment"></i> <span>Kontak</span>
-            </a>
-          </li>
-          <li class="<?php 
-            if(Url::current() == Url::to(['site/login']) )
-            {
-
-              echo "active";
-
-            }
-            ?>">
-            <a href="<?= Url::to(['site/login']) ?>">
-              <i class="fa fa-user"></i> <span>Login</span>
-            </a>
-          </li>
+        }
+        ?>">
+        <a href="<?= Url::to(['tb-mahasiswa/index']) ?>">
+          <i class="fa fa-mortar-board"></i> <span>Mahasiswa</span>
+        </a>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
+          <span>Master Data</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?= Url::to(['tb-agama/index']) ?>"><i class="fa fa-circle-o"></i>Agama</a></li>
+          <li><a href="<?= Url::to(['tb-angkatan/index']) ?>"><i class="fa fa-circle-o"></i>Angkatan</a></li>
+          <li><a href="<?= Url::to(['tb-jenis-kelamin/index']) ?>"><i class="fa fa-circle-o"></i>Gender</a></li>
+          <li><a href="<?= Url::to(['tb-status-mhs/index']) ?>"><i class="fa fa-circle-o"></i> Status Mahasiswa</a></li>
         </ul>
-      </section>
-      <!-- /.sidebar -->
-    </aside>
+      </li>
+      <li class="<?php 
+      if(Url::current() == Url::to(['site/contact']) )
+      {
 
-    <div class="content-wrapper">
-        <section class="content-header">
-            <?= Breadcrumbs::widget([
-                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                 ]) ?>
-            <?= Alert::widget() ?>
-        </section>
-       
-        <section class="content">
-        <?= $content ?>
-        </section>
-    </div>
+        echo "active";
+
+      }
+      ?>">
+      <a href="<?= Url::to(['site/contact']) ?>">
+        <i class="fa fa-comment"></i> <span>Kontak</span>
+      </a>
+    </li>
+    <li class="<?php 
+    if(Url::current() == Url::to(['site/login']) )
+    {
+
+      echo "active";
+
+    }
+    ?>">
+    <a href="<?= Url::to(['site/login']) ?>">
+      <i class="fa fa-user"></i> <span>Login</span>
+    </a>
+  </li>
+</ul>
+</section>
+<!-- /.sidebar -->
+</aside>
+
+<div class="content-wrapper">
+  <section class="content-header">
+    <?= Breadcrumbs::widget([
+     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+   ]) ?>
+   <?= Alert::widget() ?>
+ </section>
+ 
+ <section class="content">
+  <?= $content ?>
+</section>
+</div>
 </div>
 
 <!-- <footer class="footer">
@@ -194,9 +209,9 @@ DashboardAsset::register($this);
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
-</footer> -->
+  </footer> -->
 
-<?php $this->endBody() ?>
+  <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -32,7 +32,7 @@ class SerialColumn extends Column
     /**
      * {@inheritdoc}
      */
-    public $header = '#';
+    public $header = 'No.';
 
 
     /**
